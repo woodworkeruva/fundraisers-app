@@ -54,7 +54,7 @@ export default function ExploreSection({onOpen, selectedCard}: ExploreSectionPro
             ))}
         </div>
         <div className="w-full flex mx-auto justify-center mt-12">
-          <Buttons type="button" className="text-white px-4 py-2  rounded-xl border-[2px] border-cyan-400 font-thin" onClick={() => setShowMore(!showMore)}>Show {showMore ? 'Less' : 'More'}</Buttons>
+          <Buttons type="button" className="text-white text-sm md:text-md px-4 py-2  rounded-xl border-[2px] border-cyan-400 font-thin" onClick={() => setShowMore(!showMore)}>Show {showMore ? 'Less' : 'More'}</Buttons>
         </div>
         </div>
     </div>

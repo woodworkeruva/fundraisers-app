@@ -43,7 +43,7 @@ export default function ContributeModal({ onCardClose, isContributeOpen }: Contr
           Contribute To <span className="text-cyan-400">Fund</span>raisers
         </h2>
 
-        <p className="font-thin text-neutral-300  text-sm md:text-md mb-4 md:mb-8">
+        <p className="font-thin text-neutral-300  text-[0.7rem] md:text-md mb-4 md:mb-8">
           Fundraisers will receive the IDRX stablecoin you contribute to us. Once a program reaches its funding target, we will allocate the collected funds to the program&apos;s PIC (Person In Charge). You will be able to monitor each withdrawal made by the PIC and track exactly how the funds are being used, ensuring full transparency and accountability.
         </p>
 
