@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ContributeModal from "@/components/ContributeModal";
 import AboutUsSection from "@/components/Home Comps/AboutUsSection";
 import ExploreSection from "@/components/Home Comps/ExploreSection";
@@ -9,6 +9,7 @@ import HomeSection from "@/components/Home Comps/HomeSection";
 import HowItWorkSection from "@/components/Home Comps/HowItWorkSection";
 import CardModal from "@/components/CardModal";
 import { ProgramType } from "@/constants/ProgramData.constant";
+import ScrollToTop from "@/components/ScrollToTop";
 
 
 export default function HomeRaisers() {
@@ -17,6 +18,22 @@ export default function HomeRaisers() {
     const [cardIsOpen, setCardIsOpen] = useState<boolean>(false);
     const [historyIsOpen, setHistoryIsOpen] = useState<boolean>(false);
     const [selectedProgram, setSelectedProgram] = useState<ProgramType | null>(null)
+    const [scrollTop, setScrollTop] = useState<boolean>(false);
+
+    const handleScroll = () => {
+        if(window.scrollY >= 300){
+            setScrollTop(true);
+        } else {
+            setScrollTop(false);
+        }
+
+
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => removeEventListener('scroll', handleScroll);
+    },[]);
 
 
     const handleOpenContributeCard = () => {
@@ -55,6 +72,7 @@ export default function HomeRaisers() {
                 <ExploreSection onOpen={() => setCardIsOpen(true)} selectedCard={setSelectedProgram} />
                 <HowItWorkSection />
                 <AboutUsSection />
+                {scrollTop && <ScrollToTop/>}
             </div>
         </section>
     )
