@@ -7,8 +7,8 @@ export default function FundGoalSection() {
       <div className="w-full max-w-[100rem] mx-auto flex flex-col lg:flex-col xl:flex-row justify-between items-start lg:gap-12  lg:p-16">
 
         <motion.div
-          initial={{ opacity: 0, x: -45 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -45 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
           className="w-full xl:w-1/2 p-8 lg:p-0">
@@ -24,9 +24,9 @@ export default function FundGoalSection() {
         </motion.div>
         
         <motion.div 
-          initial={{ opacity: 0, x: 45 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 0, y: -45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 3 }}
           viewport={{ once: true }}
         className="w-full xl:w-1/2 grid  grid-cols-2 gap-6 text-white text-center p-10">
           <div className="bg-neutral-900 p-5 sm:p-8 rounded-xl text-center border-2   border-cyan-700 shadow-md hover:shadow-cyan-500/50 transition-shadow duration-300">

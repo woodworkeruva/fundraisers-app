@@ -7,8 +7,8 @@ export default function AboutUsSection() {
             <div className="max-w-[100rem] mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 
                 <motion.div
-                    initial={{ opacity: 0, x: -45 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: -45 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}>
                     <div className="text-2xl md:text-5xl font-light tracking-tighter">
@@ -28,8 +28,8 @@ export default function AboutUsSection() {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, x: 45 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: -45 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }} className="grid grid-cols-2 gap-6">
                     <div className="bg-neutral-900 p-6 rounded-xl text-center border border-cyan-800 shadow-md hover:shadow-cyan-500/50 transition-shadow duration-300">
