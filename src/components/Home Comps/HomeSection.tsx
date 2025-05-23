@@ -14,7 +14,7 @@ export default function HomeSection({ onOpen }: HomeSectionProps) {
       id="HomeSection"
       className="w-full bg-gradient-to-t from-blue-400 to-black pt-20 pb-24 md:pt-24 md:pb-28 lg:pt-28 lg:pb-32 flex justify-center items-center"
     >
-      <div className="w-full max-w-screen-xl px-6 md:px-10 flex flex-col items-center text-center pt-12 md:pt-24 md:pb-16">
+      <div className="w-full max-w-[100rem] px-6 md:px-10 flex flex-col items-center text-center pt-12 md:pt-24 md:pb-16">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
