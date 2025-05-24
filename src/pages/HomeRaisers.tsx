@@ -32,7 +32,7 @@ export default function HomeRaisers() {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        return () => removeEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     },[]);
 
 

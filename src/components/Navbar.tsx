@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Menu, X } from "lucide-react";
 import FundraisersLogo from "../../public/Fundraisers.svg";
 import Buttons from "./Buttons"
@@ -10,7 +10,7 @@ import Buttons from "./Buttons"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollActive, setScrollActive] = useState(false);
-  // const router = useRouter();
+  const router = useRouter();
 
 
   const handleConnectWallet = () => {
@@ -38,10 +38,20 @@ const menuItems = [
     return () => window.removeEventListener('scroll', handleScroll)
   },[]);
 
+  const handleMenuClick = (targetId:string) => {
+    if(window.location.pathname !== '/'){
+      router.push(`/#${targetId}`);
+    } else {
+      const target = document.getElementById(targetId)
+      if(target) {
+        target.scrollIntoView({behavior: 'smooth'});
+      }
+    }
+  }
 
 
   return (
-    <nav
+    <nav id="Home"
       className={`fixed top-0 left-0 z-50 w-full px-4 lg:px-8 transition-shadow backdrop-blur-sm duration-300 bg-transparent  ${
         scrollActive ? "shadow-[0_2px_10px_rgba(255,255,255,0.15)] id: 1," : ""
       }`}
@@ -49,13 +59,10 @@ const menuItems = [
       <section className="max-w-[100rem] mx-auto flex flex-wrap items-center justify-between py-4  px-2">
         
         
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => {
-                const target = document.getElementById('HomeSection');
-                if (target) {
-                  target.scrollIntoView({ behavior: 'smooth' });
-                  setMenuOpen(false);
-                }
-              }}>
+        <div className="flex items-center gap-2 cursor-pointer" 
+          onClick={() => {
+            router.push('/');
+          }}>
           <Image src={FundraisersLogo} alt="Logo" width={32} height={21} className="w-6 lg:w-8 " />
           <div>
             <span className="text-cyan-400 text-lg md:text-2xl lg:text-2xl font-light tracking-tighter">Fund</span>
@@ -83,13 +90,7 @@ const menuItems = [
           {menuItems.map(({ label, targetId }) => (
             <h2
               key={label}
-              onClick={() => {
-                const target = document.getElementById(targetId);
-                if (target) {
-                  target.scrollIntoView({ behavior: 'smooth' });
-                  setMenuOpen(false);
-                }
-              }}
+              onClick={() => handleMenuClick(targetId) }
               className="hover:text-cyan-400 cursor-pointer text-[0.9rem] lg:text-[1rem]"
             >
               {label}

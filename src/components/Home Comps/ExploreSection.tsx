@@ -27,31 +27,31 @@ export default function ExploreSection({onOpen, selectedCard}: ExploreSectionPro
     <div className="max-w-[100rem] mx-auto flex flex-col lg:flex-row justify-between items-start gap-12 p-4 md:p-8 ">
         <div className="w-full text-white px-4 sm:px-6 lg:px-16 mt-8">
         <div className="flex justify-between items-center mb-12 md:mb-16 px-4">
-            <p className="text-xl sm:text-3xl">
-            <span>Explore </span>
-            <span className="text-cyan-400">Fund</span>
-            <span className="text-white">raisers</span>
-            <span> Programs </span>
-            </p>
+          <p className="text-xl sm:text-3xl">
+          <span>Explore </span>
+          <span className="text-cyan-400">Fund</span>
+          <span className="text-white">raisers</span>
+          <span> Programs </span>
+          </p>
             
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 justify-items-center  sm:px-8">
-            {showProgramCard.map((item, index) => (
-              <ProgramCard 
-                key={`${item.id}-${index}`}  
-                onOpen={() => {
-                  selectedCard(item);
-                  onOpen();
-                }} 
-                name={item.name}   
-                desc={item.desc}
-                category={item.category}
-                createdAt={item.createdAt}
-                photoUrl={item.photoUrl}
-                
-              />
-            ))}
+          {showProgramCard.map((item, index) => (
+            <ProgramCard 
+              key={`${item.id}-${index}`}  
+              onOpen={() => {
+                selectedCard(item);
+                onOpen();
+              }} 
+              name={item.name}   
+              desc={item.desc}
+              category={item.category}
+              createdAt={item.createdAt}
+              photoUrl={item.photoUrl}
+              
+            />
+          ))}
         </div>
         <div className="w-full flex mx-auto justify-center mt-12">
           <Buttons type="button" className="text-white text-sm md:text-md px-4 py-2  rounded-xl border-[2px] border-cyan-400 font-thin" onClick={() => setShowMore(!showMore)}>Show {showMore ? 'Less' : 'More'}</Buttons>

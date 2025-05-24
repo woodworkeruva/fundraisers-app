@@ -36,7 +36,7 @@ export default function ContributeModal({ onCardClose, isContributeOpen }: Contr
           onClick={onCardClose}
           className="absolute top-4 right-4 text-neutral-400 hover:text-white transition cursor-pointer p-1 md:p-2 hover:bg-neutral-900/90  bg-neutral-800/90 rounded-full"
         >
-          <X className="w-5 md:w-8  h-5 md:h-8"  />
+          <X className="w-5 md:w-6  h-5 md:h-6"  />
         </button>
 
         <h2 className="text-center text-md md:text-xl font-thin mb-4 md:mb-8">

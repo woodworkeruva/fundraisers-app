@@ -6,11 +6,7 @@ export default function FeaturesRaisers() {
    return (
     <>
         <div className="bg-black pt-46">
-        <div className="pointer-events-none fixed inset-0 -z-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
-            <div className="absolute left-0 top-0 h-[500px] w-[500px] bg-blue-500/10 blur-[100px]" />
-            <div className="absolute bottom-0 right-0 h-[500px] w-[500px] bg-purple-500/10 blur-[100px]" />
-        </div>
+
         <div className="max-w-[100rem] min-h-screen mx-auto px-4 sm:px-6 lg:px-16  text-white pb-24 z-10">
 
             <div className="flex justify-between items-center pb-8 md:pb-16 px-4" >
