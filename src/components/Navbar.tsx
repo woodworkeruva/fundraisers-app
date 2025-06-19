@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { Menu, X } from "lucide-react";
 import FundraisersLogo from "../../public/Fundraisers.svg";
-import Buttons from "./Buttons"
+// import Buttons from "./Buttons"
+import ConnectWalletButton from "./ConnectWalletButton";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,9 +14,9 @@ export default function Navbar() {
   const router = useRouter();
 
 
-  const handleConnectWallet = () => {
-    console.log('hi')
-  }
+  // const handleConnectWallet = () => {
+  //   console.log('hi')
+  // }
   
 const menuItems = [
   { label: "Home", targetId: "HomeSection" },
@@ -98,7 +99,7 @@ const menuItems = [
           ))}
 
           <div className="w-full lg:w-auto   lg:mt-0 flex justify-center text-center">
-            <Buttons
+            {/* <Buttons
               className="text-white font-light border-[3px] border-cyan-500 py-2 px-4 rounded-xl hover:border-cyan-600 hover:bg-cyan-500 cursor-pointer w-full lg:w-auto text-[0.9rem] lg:text-[1rem]"
               onClick={() => {
                 setMenuOpen(false); 
@@ -107,7 +108,8 @@ const menuItems = [
               type="button"
             >
               Connect Wallet
-            </Buttons>
+            </Buttons> */}
+            <ConnectWalletButton />
           </div>
 
         </div>

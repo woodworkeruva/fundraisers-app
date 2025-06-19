@@ -36,7 +36,7 @@ export default function ExploreSection({onOpen, selectedCard}: ExploreSectionPro
             
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 justify-items-center  sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-x-8 gap-y-12 justify-items-center  sm:px-8">
           {showProgramCard.map((item, index) => (
             <ProgramCard 
               key={`${item.id}-${index}`}  
